@@ -1,0 +1,16 @@
+[llvm]
+link-shared = true
+
+
+[target.armv7-unknown-linux-musleabihf]
+# llvm-config = "/usr/bin/llvm-config-8"
+linker = "arm-linux-musleabihf-gcc"
+ar = "arm-linux-musleabihf-ar" # optional
+
+[target.armv7-unknown-linux-musleabi]
+linker = "arm-linux-musleabi-ld"
+ar = "arm-linux-musleabi-ar" # optional
+
+[target.arm-unknown-linux-musleabi]
+linker = "arm-linux-musleabihf-ld"
+ar = "arm-linux-musleabihf-ar" # optional

@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  talki-firmware-builder:
+    container_name: talki-firmware-builder
+    image: thepia/talki-firmware-builder:1.0.0
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+      target: rust
+    # entrypoint: /bin/bash
+    tty: true
+    volumes:
+    - ./home/:/home
+    - ../..:/opt/talki
+    environment: 
+      - TEST=TEST
+    ports:
+      - 5900:5900           # vnc
+      - 8080:8080           # novnc
+      - 5678:5678           # debugpy debugging
+      # SSH ?
