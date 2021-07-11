@@ -1,6 +1,8 @@
 # Firmware Template
 
-Automates the build of multiple packages forming the `/Brain`.
+Automates the build of multiple packages forming the `/Brain`. The software built is for [Ziloo](https://github.com/thepian/ziloo)
+
+To clone the repository remember submodules and use `git clone --recurse-submodules https://github.com/experientials/build-template`.
 
 
 ## Target Platforms

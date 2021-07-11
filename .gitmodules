@@ -1,0 +1,9 @@
+[submodule "Brain/libmaix"]
+	path = Brain/libmaix
+	url = git@github.com:sipeed/libmaix.git
+[submodule "Brain/opencv"]
+	path = Brain/opencv
+	url = git@github.com:opencv/opencv.git
+[submodule "tools/sunxi-livesuite"]
+	path = tools/sunxi-livesuite
+	url = git@github.com:linux-sunxi/sunxi-livesuite.git
