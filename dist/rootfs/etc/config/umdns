@@ -1,0 +1,3 @@
+option jail 1
+list network lan
+list network dmz #Provides visibility into both networks, but does not act as a repeater

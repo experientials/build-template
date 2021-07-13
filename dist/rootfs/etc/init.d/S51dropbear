@@ -1,0 +1,42 @@
+#!/bin/sh
+
+[ -f /etc/config/dropbear ] && [ -r /etc/config/dropbear ] && . /etc/config/dropbear
+
+port=${port:-22}
+
+if [ ! -s /etc/dropbear/dropbear_rsa_host_key ]; then
+        echo "generate key"
+        if [ -x /usr/bin/dropbearkey ]; then
+                mkdir -p /tmp/dropbear
+                /usr/bin/dropbearkey -t rsa -f /tmp/dropbear/dropbear_rsa_host_key 2>&-
+                mv /tmp/dropbear/dropbear_rsa_host_key /etc/dropbear/dropbear_rsa_host_key
+        fi
+fi
+
+do_start() {
+        printf "Start dropbear: "
+        start-stop-daemon -b -S -q -m -p /var/run/dropbear.pid -x /usr/sbin/dropbear -- -p ${port}
+        echo "OK"
+}
+
+do_stop() {
+        printf "Stop dropbear: "
+        start-stop-daemon -K -q -p /var/run/dropbear.pid
+        echo "OK"
+}
+
+case "$1" in
+  start)
+        do_start
+        ;;
+  stop)
+        do_stop
+        ;;
+  restart|reload)
+        "$0" stop
+        "$0" start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
