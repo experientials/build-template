@@ -7,4 +7,6 @@ In order to setup Alpine v3.14:
 
 # Setup dependencies for openCV
 
-* Install the packages found in [docker alpine-openCV container](https://github.com/petronetto/opencv-alpine/blob/master/Dockerfile)
+* Install the packages found in [docker alpine-openCV container](https://github.com/petronetto/opencv-alpine/blob/master/Dockerfile) 
+Note: Remove the ttags from the mirror websites. 
+
