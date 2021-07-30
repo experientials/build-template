@@ -1,7 +1,7 @@
 # Setup dependencies for openCV
 
 * Install the following packages:
-    * apk update && apk upgrade && apk --no-cache add \
+    * ``` apk update && apk upgrade && apk --no-cache add \
   bash \
   build-base \
   ca-certificates \
@@ -39,4 +39,28 @@
   tiff-dev \
   unzip \
   zlib-dev \
-  opj_decompress
+  opj_decompress ```
+* Run ```/usr/local/bin/pip3 install --upgrade pip``` to upgrade pip
+* ln -s /usr/include/locale.h /usr/include/xlocale.h
+* /usr/local/bin/pip3 install numpy
+* Install OpenCV by running:
+  ```cd /opt && \
+  wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
+  unzip 3.2.0.zip && rm 3.2.0.zip && \
+  wget https://github.com/opencv/opencv_contrib/archive/3.2.0.zip && \
+  unzip 3.2.0.zip && rm 3.2.0.zip \
+  && \
+  cd /opt/opencv-3.2.0 && mkdir build && cd build && \
+  cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_C_COMPILER=/usr/bin/clang \
+    -D CMAKE_CXX_COMPILER=/usr/bin/clang++ \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D WITH_FFMPEG=ON \
+    -D WITH_TBB=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib-3.2.0/modules \
+    -D PYTHON_EXECUTABLE=/usr/local/bin/python \
+    .. \
+  && \
+  make -j$(nproc) && make install && cd .. && rm -rf build \```
