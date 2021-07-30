@@ -4,3 +4,10 @@
 Note: Remove the tags from the mirror websites.
 * Install the missing "opj_decompress" file by running ```apk add openjpeg-tools```
 
+```c
+int main() {
+  int y = SOME_MACRO_REFERENCE;
+  int x = 5 + 6;
+  cout << "Hello World! " << x << std::endl();
+}
+```
