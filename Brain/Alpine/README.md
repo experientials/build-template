@@ -5,8 +5,3 @@ In order to setup Alpine v3.14:
 * Setup ssh to enable remote login (permit root login as well)
 * Change the /etc/apk/repositories to fetch packages from v3.14 (or edge)
 
-# Setup dependencies for openCV
-
-* Install the packages found in [docker alpine-openCV container](https://github.com/petronetto/opencv-alpine/blob/master/Dockerfile) 
-Note: Remove the ttags from the mirror websites. 
-
