@@ -1,4 +1,4 @@
-# Setup dependencies for openCV
+# Setup dependencies for openCV 4.5.3
 
 * Install the following packages:
 ``` 
@@ -49,12 +49,12 @@ apk update && apk upgrade && apk --no-cache add \
 * Install OpenCV by running:
 ```
   cd /opt && \
-  wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
-  unzip 3.2.0.zip && rm 3.2.0.zip && \
-  wget https://github.com/opencv/opencv_contrib/archive/3.2.0.zip && \
-  unzip 3.2.0.zip && rm 3.2.0.zip \
+  wget https://github.com/opencv/opencv/archive/4.5.3.zip && \
+  unzip 4.5.3.zip && rm 4.5.3.zip && \
+  wget https://github.com/opencv/opencv_contrib/archive/4.5.3.zip && \
+  unzip 4.5.3.zip && rm 4.5.3.zip \
   && \
-  cd /opt/opencv-3.2.0 && mkdir build && cd build && \
+  cd /opt/opencv-4.5.3 && mkdir build && cd build && \
   cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_C_COMPILER=/usr/bin/clang \
     -D CMAKE_CXX_COMPILER=/usr/bin/clang++ \
@@ -63,7 +63,7 @@ apk update && apk upgrade && apk --no-cache add \
     -D INSTALL_C_EXAMPLES=OFF \
     -D WITH_FFMPEG=ON \
     -D WITH_TBB=ON \
-    -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib-3.2.0/modules \
+    -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib-4.5.3/modules \
     -D PYTHON_EXECUTABLE=/usr/local/bin/python \
     .. \
   && \
