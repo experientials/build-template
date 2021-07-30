@@ -1,7 +1,7 @@
 # Setup dependencies for openCV
 
 * Install the following packages:
-  ``` apk update && apk upgrade && apk --no-cache add \
+`` apk update && apk upgrade && apk --no-cache add \
   bash \
   build-base \
   ca-certificates \
@@ -39,7 +39,8 @@
   tiff-dev \
   unzip \
   zlib-dev \
-  opj_decompress ```
+  opj_decompress ``
+  
 * Run ```/usr/local/bin/pip3 install --upgrade pip``` to upgrade pip
 * ln -s /usr/include/locale.h /usr/include/xlocale.h
 * /usr/local/bin/pip3 install numpy
