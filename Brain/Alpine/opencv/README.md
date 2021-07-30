@@ -1,7 +1,8 @@
 # Setup dependencies for openCV
 
 * Install the following packages:
-``` apk update && apk upgrade && apk --no-cache add \
+``` 
+apk update && apk upgrade && apk --no-cache add \
   bash \
   build-base \
   ca-certificates \
@@ -42,11 +43,12 @@
   opj_decompress 
 ```
   
-* Run ```/usr/local/bin/pip3 install --upgrade pip``` to upgrade pip
+* Run `/usr/local/bin/pip3 install --upgrade pip` to upgrade pip
 * ln -s /usr/include/locale.h /usr/include/xlocale.h
 * /usr/local/bin/pip3 install numpy
 * Install OpenCV by running:
-  ```cd /opt && \
+```
+  cd /opt && \
   wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
   unzip 3.2.0.zip && rm 3.2.0.zip && \
   wget https://github.com/opencv/opencv_contrib/archive/3.2.0.zip && \
@@ -65,4 +67,5 @@
     -D PYTHON_EXECUTABLE=/usr/local/bin/python \
     .. \
   && \
-  make -j$(nproc) && make install && cd .. && rm -rf build \```
+  make -j$(nproc) && make install && cd .. && rm -rf build
+```
