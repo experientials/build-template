@@ -44,8 +44,9 @@ apk update && apk upgrade && apk --no-cache add \
 ```
   
 * Run `/usr/local/bin/pip3 install --upgrade pip` to upgrade pip
-* ln -s /usr/include/locale.h /usr/include/xlocale.h
-* /usr/local/bin/pip3 install numpy
+* Make a symbolic link for locale header `ln -s /usr/include/locale.h /usr/include/xlocale.h`
+* Install numby `/usr/local/bin/pip3 install numpy`
+* The int64_t is redefined in the modules. Comment out line#21 of /opt/opencv_contrib-4.5.3/modules/wechat_qrcode/src/zxing/common/bitarray.cpp (there is a typedef definition there)
 * Install OpenCV by running:
 ```
   cd /opt && \
