@@ -1,7 +1,7 @@
 # Setup dependencies for openCV
 
 * Install the following packages:
-    * ``` apk update && apk upgrade && apk --no-cache add \
+  ``` apk update && apk upgrade && apk --no-cache add \
   bash \
   build-base \
   ca-certificates \
