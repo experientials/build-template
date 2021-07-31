@@ -37,6 +37,7 @@ apk update && apk upgrade && apk --no-cache add \
   openssl \
   python3 \
   python3-dev \
+  py3-pip \
   tiff-dev \
   unzip \
   zlib-dev \
