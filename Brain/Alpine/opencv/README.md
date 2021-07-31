@@ -40,7 +40,7 @@ apk update && apk upgrade && apk --no-cache add \
   tiff-dev \
   unzip \
   zlib-dev \
-  opj_decompress 
+  openjpeg-tools 
 ```
   
 * Run `/usr/local/bin/pip3 install --upgrade pip` to upgrade pip
