@@ -70,3 +70,5 @@ apk update && apk upgrade && apk --no-cache add \
   && \
   make -j$(nproc) && make install && cd .. && rm -rf build
 ```
+
+**!!Important!!** The above compilation requires a lot of Ram. If you don't have swap, extend the tmpfs size by running `mount -o remount,size=4G,noatime /` 
