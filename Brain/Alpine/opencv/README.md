@@ -76,5 +76,5 @@ apk update && apk upgrade && apk --no-cache add \
 
 # Containarize the toolchain
 
-* The toolchain is containarized in (alexlyrakis/alpine_opencv_toolchain)(https://hub.docker.com/repository/docker/alexlyrakis/alpine_opencv_toolchain)
+* The toolchain is containarized in [alexlyrakis/alpine_opencv_toolchain](https://hub.docker.com/repository/docker/alexlyrakis/alpine_opencv_toolchain)
 * We can easily run it by executing `docker run --rm -it -v host/path/to/C++/:/subcognition --platform arm64  docker.io/alexlyrakis/subcognition_toolchain:latest /bin/bash`
