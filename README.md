@@ -90,6 +90,11 @@ U-Boot
 [Intro](http://www.denx.de/wiki/U-Bootdoc/Presentation)
 [Documentation](http://www.denx.de/wiki/U-Boot/Documentation) 
 
+
+Alpine 
+[Intro](https://alpinelinux.org/about/)
+[Handbook](https://docs.alpinelinux.org/user-handbook/0.1a/index.html)
+
 ## Subcognition
 
 - [Motion-detector for moving camera on OpenCV](https://stackoverflow.com/questions/28308057/motion-detector-for-moving-camera-on-opencv)
