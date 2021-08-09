@@ -16,3 +16,13 @@ jobs:
           echo This job does specify a container.
           echo It runs in the container instead of the VM.
         name: Run in container
+  container_custom:
+    runs-on: ubuntu-latest
+    container: alexlyrakis/alpine_opencv_toolchain@sha256:c085aa114af0
+    steps:
+      - run: |
+          echo This job does specify a container.
+          echo It runs in the container instead of the VM.
+          uname -m
+        name: Run in container
+  
