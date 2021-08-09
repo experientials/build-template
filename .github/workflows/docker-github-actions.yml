@@ -18,7 +18,7 @@ jobs:
         name: Run in container
   container_custom:
     runs-on: ubuntu-latest
-    container: alexlyrakis/alpine_opencv_toolchain@sha256:c085aa114af0
+    container: docker.io/alexlyrakis/alpine_opencv_toolchain:latest@sha256:c085aa114af03adae32ee33e3b178568164ebb6123ccf8ab5534d003d37102d8
     steps:
       - run: |
           echo This job does specify a container.
