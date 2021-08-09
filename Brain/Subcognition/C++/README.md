@@ -5,4 +5,4 @@
 *Important!** If you cannot execute arm containers on x86_64 Linux system, then run the following `docker run --rm --privileged linuxkit/binfmt:v0.8`. This should setup the binfmt and QEMU.
 
 # Test on GitHub Actions
-r1
+r2
