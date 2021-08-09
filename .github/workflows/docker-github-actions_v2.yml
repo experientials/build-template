@@ -1,0 +1,33 @@
+name: docker-github-actions-v2
+on: [push]
+jobs:
+  vm:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo This job does not specify a container.
+          echo It runs directly on the virtual machine.
+        name: Run on VM
+  container:
+    runs-on: ubuntu-latest
+    container: node:10.16-jessie
+    steps:
+      - run: |
+          echo This job does specify a container.
+          echo It runs in the container instead of the VM.
+        name: Run in container
+  container_custom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - uses: addnab/docker-run-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: docker.io
+          image: alexlyrakis/alpine_opencv_toolchain:latest@sha256:c085aa114af03adae32ee33e3b178568164ebb6123ccf8ab5534d003d37102d8
+          options: -v ${{ github.workspace }}:/work -e ABC=123
+          run: |
+            echo "Running Script"
+            ls /work/
