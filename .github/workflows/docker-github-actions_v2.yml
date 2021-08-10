@@ -28,7 +28,7 @@ jobs:
         with:
           registry: docker.io
           image: alexlyrakis/alpine_opencv_toolchain:latest@sha256:1b4aa9882fdb0f8d7a3cf3ee9c1f482c838c59f5e2872bc74a4cd711f1952fb8
-          options: --platform 64 -v ${{ github.workspace }}:/work -e ABC=123
+          options: --platform arm64 -v ${{ github.workspace }}:/work -e ABC=123
           run: |
             echo "Running Script"
             cd /work/Brain/Subcognition/C++/CMake/build/
