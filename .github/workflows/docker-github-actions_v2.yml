@@ -24,7 +24,7 @@ jobs:
       - uses: addnab/docker-run-action@v3
         with:
           registry: docker.io
-          image: alexlyrakis/alpine_opencv_toolchain:latest@sha256:c085aa114af03adae32ee33e3b178568164ebb6123ccf8ab5534d003d37102d8
+          image: alexlyrakis/alpine_opencv_toolchain:latest@sha256:1b4aa9882fdb0f8d7a3cf3ee9c1f482c838c59f5e2872bc74a4cd711f1952fb8
           options: -v ${{ github.workspace }}:/work -e ABC=123
           run: |
             echo "Running Script"
