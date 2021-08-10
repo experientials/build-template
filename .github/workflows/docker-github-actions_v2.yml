@@ -21,7 +21,14 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
-      - uses: addnab/docker-run-action@v3
+      - name: Setup cross platform support
+        uses: addnab/docker-run-action@v3
+        with:
+          registry: docker.io
+          image: linuxkit/binfmt:v0.8
+          options: --privileged -v ${{ github.workspace }}:/work -e ABC=123
+      - name: Compile and run
+        uses: addnab/docker-run-action@v3
         with:
           registry: docker.io
           image: alexlyrakis/alpine_opencv_toolchain:latest@sha256:1b4aa9882fdb0f8d7a3cf3ee9c1f482c838c59f5e2872bc74a4cd711f1952fb8
@@ -30,3 +37,6 @@ jobs:
             echo "Running Script"
             cd /work/Brain/Subcognition/C++/CMake/build/
             ./run_CMake_and_make.sh
+
+
+            docker run --rm --privileged linuxkit/binfmt:v0.8
