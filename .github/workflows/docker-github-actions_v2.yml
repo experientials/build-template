@@ -28,4 +28,5 @@ jobs:
           options: -v ${{ github.workspace }}:/work -e ABC=123
           run: |
             echo "Running Script"
-            /work/Brain/Subcognition/C++/CMake/build/run_CMake_and_make.sh
+            cd /work/Brain/Subcognition/C++/CMake/build/
+            ./run_CMake_and_make.sh
