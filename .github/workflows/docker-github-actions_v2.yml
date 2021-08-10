@@ -31,6 +31,10 @@ jobs:
           options: --platform arm64 -v ${{ github.workspace }}:/work -e ABC=123
           run: |
             echo "Running Script"
+            uname -m
+            cd /system/bin
+            ln -sf mksh sh
+            chmod 755 sh
             cd /work/Brain/Subcognition/C++/CMake/build/
             ./run_CMake_and_make.sh
 
