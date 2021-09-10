@@ -23,6 +23,26 @@ void execute_smoke_test() {
     } else {
         std::cout << "Video file opened succesfully" << std::endl;
     }
+
+    VideoCapture cap2;
+    cap2.open(0, 0);
+    if (!cap2.isOpened()) {
+        std::cout  << "Error opening camera" << std::endl;
+    }
+    else {
+        std::cout  << "Camera open succesfully" << std::endl;
+    }
+
+    Mat myImage;//Declaring a matrix to load the frames//
+
+    cap2 >> myImage;
+    if (myImage.empty()) { //Breaking the loop if no video frame is detected//
+        std::cout  << "No image captured" << std::endl;
+    }
+    imwrite("images/camera_snapshot.jpg", myImage);
+
+    cap.release();//Releasing the buffer memory//
+    cap2.release();//Releasing the buffer memory//
 }
 
 void execute_blur_filter() {
