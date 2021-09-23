@@ -11,6 +11,7 @@ int main(int argc, char const* argv[]) {
     // Execute smoke tests with image and video files
     execute_smoke_test();
     execute_blur_filter();
+    test_camera();
 
     /* code */
     return 0;
