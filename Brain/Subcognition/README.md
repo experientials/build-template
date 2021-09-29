@@ -13,7 +13,7 @@ Supported camera devices to be considered.
 
 # Hand detection
 
-There are many research papers published hand detection techniques over the years. Two of those give a nice overview of the most popular techniques:
+There are many research papers that published hand detection techniques over the years. Two of those give a nice overview of the most popular techniques:
 - [Hand Gesture Recognition Based on Computer Vision: A Review of Techniques](https://www.mdpi.com/2313-433X/6/8/73)
 - [Vision-Based Hand Gesture Recognition System for a Dynamic and Complicated Environment](https://ieeexplore.ieee.org/document/7379635)
 
