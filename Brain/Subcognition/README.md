@@ -26,6 +26,6 @@ All the 3 methods are tested in a general computer machine featuring Intel Core 
 
 | Method      | Fps (min - max) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
-| yolo v4 tiny | TBD | Python - Yolo library | Bad timing performance for a fast setup. The neural network used is very expensive. Moreover, the standard tuning is not accurate. |
-| MediaPipe Hands: On-device Real-time Hand Tracking | TBD | Python - Mediapipe library | Good performance on a general CPU. Very accurate detection. The implementation is based on an optimized detection based on hand tracking. Google claims its implementation achieved 95% palm detection accuracy |
+| yolo v4 tiny | 13 - 95 (size = 150) | Python - Yolo library | Medium timing performance for a fast setup. The largest the size, the highest the accuracy of this method. However, even if we set a very big size (e.g., 500), the accuracy is not dramatically improved. This doesn't use a tracking algorithm like the mediapipe algorithm. |
+| MediaPipe Hands: On-device Real-time Hand Tracking | 11 - 86 | Python - Mediapipe library | Good performance on a general CPU. Very accurate detection. The implementation is based on hand tracking (besides palm and finger detection). Google claims their implementation achieves 95% palm detection accuracy |
 | fast hand detection and gesture recognition | TBD | No implementation found. Manually developed in python | TBD
