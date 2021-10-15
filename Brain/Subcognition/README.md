@@ -40,9 +40,12 @@ All the 3 methods are tested in a general computer machine featuring Intel Core 
 
 The above 3 methods were tested with 4 FPS video. The main observation is that all algorithms exhibit almost the same behaviour and results. Regarding mediapipe, it may lose tracking more often if the human movement is very rapid, which is not our usual use case. If mediapipe loses tracking it will re-initialize hand detection without taking advantage of its tracking algorithm.
 
-## Test with gloves
+### Test with gloves
 
 As expected, the accuracy of all algorithms is seriously decreased with globes (drops more than 95%). Another algorithm should be researched in case glove detection is desired.
+
+## Boundary box 
+
 
 
 
