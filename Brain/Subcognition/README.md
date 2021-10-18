@@ -40,13 +40,27 @@ All the 3 methods are tested in a general computer machine featuring Intel Core 
 
 The above 3 methods were tested with 4 FPS video. The main observation is that all algorithms exhibit almost the same behaviour and results. Regarding mediapipe, it may lose tracking more often if the human movement is very rapid, which is not our usual use case. If mediapipe loses tracking it will re-initialize hand detection without taking advantage of its tracking algorithm.
 
+Observation: Perhaps we can even go as low as 2 FPS. Since this doesn't affect algorithm accuracy and an intended interaction shouldn't take less than 1 sec.
+
 ### Test with gloves
 
 As expected, the accuracy of all algorithms is seriously decreased with globes (drops more than 95%). Another algorithm should be researched in case glove detection is desired.
 
 ## Boundary box 
 
+#### Size 
 
+Both the mediapipe and the yolo algorithms result in a boundary box with the detected hand in the center. However, the dimensions do not include the item but only the hands. Assuming that the desired object to be recognised has dimensions similar to the hand (e.g., it's probably a small toy), and in order for the boundary box to include the item, it has to be extended according to the hand size. The formula that is used in our tests:
 
+- diagonal = square(x1-x2)^2 + (y1-y2)^2)
+- boundary box width = original width + diagonal/scale_factor
+- boundary box height = original height + diagonal/scale_factor
 
+*Note:* The fast hand detection algorithm failed to accurately detect the hand. That said, it won't be used for hand detection.
 
+#### Distinct between hand and object
+
+There are many segmentation algorithms out there that can be used for object segmentation. We will test the following ones:
+
+- K-Means Clustering
+- Simple segmentation based on colour
