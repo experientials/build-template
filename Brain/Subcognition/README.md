@@ -60,7 +60,21 @@ Both the mediapipe and the yolo algorithms result in a boundary box with the det
 
 ### Distinction between hand and object
 
-There are many segmentation algorithms out there that can be used for object segmentation. We will test the following ones:
+There are many segmentation algorithms out there that can be used for object segmentation. A nice article is [Image Segmentation using OpenCV](https://nayakpplaban.medium.com/image-segmentation-using-opencv-39013013920a)
 
-- K-Means Clustering
-- Simple segmentation based on colour
+We will test the following ones:
+
+- K-Means (Clustering Based Segmentation)
+- Contour Detection (Edge based segmentation)
+- Simple segmentation based on colour 
+- 
+
+#### Testing
+
+
+| Method      | Fps (min - max) | Implementation/Test | Notes
+| ----------- | ----------- | ----------- | ----------- | 
+| K-Means | TBD | Python - OpenCV library | Overall good segmentation, however it fails to accurately detect the hand in some cases. The performance of the algorithm greatly depends on the background. Would consider this algorithm only if there is high contrast between the hand and the object.|
+| Contour Detection | TBD | Python - OpenCV library | TBD |
+
+
