@@ -48,7 +48,7 @@ As expected, the accuracy of all algorithms is seriously decreased with globes (
 
 ## Boundary box 
 
-#### Size 
+### Calculation of box size 
 
 Both the mediapipe and the yolo algorithms result in a boundary box with the detected hand in the center. However, the dimensions do not include the item but only the hands. Assuming that the desired object to be recognised has dimensions similar to the hand (e.g., it's probably a small toy), and in order for the boundary box to include the item, it has to be extended according to the hand size. The formula that is used in our tests:
 
@@ -58,7 +58,7 @@ Both the mediapipe and the yolo algorithms result in a boundary box with the det
 
 *Note:* The fast hand detection algorithm failed to accurately detect the hand. That said, it won't be used for hand detection.
 
-#### Distinct between hand and object
+### Distinction between hand and object
 
 There are many segmentation algorithms out there that can be used for object segmentation. We will test the following ones:
 
