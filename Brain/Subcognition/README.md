@@ -64,10 +64,9 @@ There are many segmentation algorithms out there that can be used for object seg
 
 We will test the following ones:
 
-- K-Means (Clustering Based Segmentation)
+- K-Means (Clustering based segmentation)
 - Contour Detection (Edge based segmentation)
-- Simple segmentation based on colour 
-- 
+- Hand colour segmentation (Threshold segmentation using HSV and/or YCrCb mask)
 
 #### Testing
 
@@ -75,5 +74,6 @@ We will test the following ones:
 | ----------- | ----------- | ----------- | ----------- | 
 | K-Means | TBD | Python - OpenCV library | Overall good segmentation, however it fails to accurately detect the hand in some cases. The performance of the algorithm greatly depends on the background. Would consider this algorithm only if there is high contrast between the hand and the object.|
 | Contour Detection | TBD | Python - OpenCV library | The edge detection fails in many cases. it cannot accurately detect the boundaries of the object. That said, it blends object and hand many times resulting in a very wrong contour |
+| Hand colour | TBD | Python - OpenCV library | The segmentation based on hand colour gives the best results. Even if it's not 100% accurate, it removes only hand pixels. This depends on the colour size, but we don't expect objects with the exact same colour as the hand, otherwise a distinction wouldn't be possible. |
 
 
