@@ -76,4 +76,6 @@ We will test the following ones:
 | Contour Detection | TBD | Python - OpenCV library | The edge detection fails in many cases. it cannot accurately detect the boundaries of the object. That said, it blends object and hand many times resulting in a very wrong contour |
 | Hand colour | TBD | Python - OpenCV library | The segmentation based on hand colour gives the best results. Even if it's not 100% accurate, it removes only hand pixels. This depends on the colour size, but we don't expect objects with the exact same colour as the hand, otherwise a distinction wouldn't be possible. |
 
+## Gesture recognition
 
+Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
