@@ -52,9 +52,8 @@ As expected, the accuracy of all algorithms is seriously decreased with globes (
 
 Both the mediapipe and the yolo algorithms result in a boundary box with the detected hand in the center. However, the dimensions do not include the item but only the hands. Assuming that the desired object to be recognised has dimensions similar to the hand (e.g., it's probably a small toy), and in order for the boundary box to include the item, it has to be extended according to the hand size. The formula that is used in our tests:
 
-- diagonal = square(x1-x2)^2 + (y1-y2)^2)
-- boundary box width = original width + diagonal/scale_factor
-- boundary box height = original height + diagonal/scale_factor
+- boundary box width = original width + (x1-x2)/scale_factor
+- boundary box height = original height + (y1-y2)/scale_factor
 
 *Note:* The fast hand detection algorithm failed to accurately detect the hand. That said, it won't be used for hand detection.
 
