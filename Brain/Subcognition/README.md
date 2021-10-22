@@ -78,3 +78,16 @@ We will test the following ones:
 ## Gesture recognition
 
 Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
+
+### Mediapipe - Tradeoff between performance and FPS
+
+The webcamera used in our experiments has max. resolution of 30 FPS. In the analysis above, we saw that mediapipe can run with lower FPS without an impact in the accuracy. The question here is, what is impact of a lower resolution (= lower FPS) in mediapipe performance? Also, how is it affected by distance? 
+
+| Distance [m] | Camera frame rate [FPS] | mediapipe exec. time [s]
+| ----------- | ----------- | ----------- | 
+| 0.75 | 2 | 0.042 |
+| 0.75 | 5 | 0.032 | 
+| 0.75 | 15 | 0.033 |
+| 0.75 | 30 | 0.029 |
+
+
