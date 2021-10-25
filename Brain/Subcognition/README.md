@@ -98,6 +98,6 @@ The webcamera used in our experiments has max. resolution of 30 FPS. In the anal
 | 2 | 15 | 0.032 |
 | 2 | 30 | 0.031 |
 
-*Conclusions:* 
+**Conclusions:** 
 - In a distance smaller than 2 meters, when the camera frame rate is higher, the average execution time is smaller. That can be explained because mediapipe makes more use of the tracking algorithm.
 - In a distance bigger than 2 meters, the FPS do not have a big impact on performance. This is probably explained since the hit rate of mediapipe decreases a lot. 
