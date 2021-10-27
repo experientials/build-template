@@ -42,6 +42,29 @@ The above 3 methods were tested with 4 FPS video. The main observation is that a
 
 Observation: Perhaps we can even go as low as 2 FPS. Since this doesn't affect algorithm accuracy and an intended interaction shouldn't take less than 1 sec.
 
+### Mediapipe - Tradeoff between performance and FPS
+
+The webcamera used in our experiments has max. resolution of 30 FPS. In the analysis above, we saw that mediapipe can run with lower FPS without an impact in the accuracy. The question here is, what is impact of a lower resolution (= lower FPS) in mediapipe performance? Also, how is it affected by distance? 
+
+| Distance [m] | Camera frame rate [FPS] | mediapipe exec. time [s]
+| ----------- | ----------- | ----------- | 
+| 0.35 | 2 | 0.034 |
+| 0.35 | 5 | 0.031 | 
+| 0.35 | 15 | 0.026 |
+| 0.35 | 30 | 0.027 |
+| 1 | 2 | 0.042 | 
+| 1 | 5 | 0.032 | 
+| 1 | 15 | 0.033 |
+| 1 | 30 | 0.029 |
+| 2 | 2 | 0.031 |
+| 2 | 5 | 0.031 |
+| 2 | 15 | 0.032 |
+| 2 | 30 | 0.031 |
+
+**Conclusions:** 
+- In a distance smaller than 2 meters, when the camera frame rate is higher, the average execution time is smaller. That can be explained because mediapipe makes more use of the tracking algorithm.
+- In a distance bigger than 2 meters, the FPS do not have a big impact on performance. This is probably explained since the hit rate of mediapipe decreases a lot. 
+
 ### Test with gloves
 
 As expected, the accuracy of all algorithms is seriously decreased with globes (drops more than 95%). Another algorithm should be researched in case glove detection is desired.
@@ -79,25 +102,4 @@ We will test the following ones:
 
 Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
 
-### Mediapipe - Tradeoff between performance and FPS
 
-The webcamera used in our experiments has max. resolution of 30 FPS. In the analysis above, we saw that mediapipe can run with lower FPS without an impact in the accuracy. The question here is, what is impact of a lower resolution (= lower FPS) in mediapipe performance? Also, how is it affected by distance? 
-
-| Distance [m] | Camera frame rate [FPS] | mediapipe exec. time [s]
-| ----------- | ----------- | ----------- | 
-| 0.35 | 2 | 0.034 |
-| 0.35 | 5 | 0.031 | 
-| 0.35 | 15 | 0.026 |
-| 0.35 | 30 | 0.027 |
-| 1 | 2 | 0.042 | 
-| 1 | 5 | 0.032 | 
-| 1 | 15 | 0.033 |
-| 1 | 30 | 0.029 |
-| 2 | 2 | 0.031 |
-| 2 | 5 | 0.031 |
-| 2 | 15 | 0.032 |
-| 2 | 30 | 0.031 |
-
-**Conclusions:** 
-- In a distance smaller than 2 meters, when the camera frame rate is higher, the average execution time is smaller. That can be explained because mediapipe makes more use of the tracking algorithm.
-- In a distance bigger than 2 meters, the FPS do not have a big impact on performance. This is probably explained since the hit rate of mediapipe decreases a lot. 
