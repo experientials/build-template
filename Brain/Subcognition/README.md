@@ -102,4 +102,12 @@ We will test the following ones:
 
 Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
 
+## Surroundings cognition system
 
+The subcognition application should be able to produce some information based on the detected events. 
+
+### Detect number of hands appeared in the scene
+
+Every time that a hand appears we want to say that hand appear, and every time that it goes away we want to say that hand disappeared. From the above analysis, it is obvious that mediapipe algorithm gives the best results. Mediapipe outputs the number of hands detected in a list (measurement is per frame). However, there are some deficiencies that must be tackled:
+- Mediapipe sometimes fail to detect the hands. That said, if the camera works at 30 FPS and the hands are not detected in the 5 out of the 30 FPS per second we can't deduct that hands disappeared for 0.17 sec! (**solution:** low pass filter)
+- Hand is occluded due to another item. How do we treat this use case? Do we say that hand disappeared?  
