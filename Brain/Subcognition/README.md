@@ -113,7 +113,7 @@ Every time that a hand appears we want to say that hand appear, and every time t
 - Mediapipe sometimes falsely calculates two hands when only 1 hand is present in the scene. (**solution: filterout the hand centers which are very close together**)
 - Hand is occluded due to another item. How do we treat this use case? Do we say that hand disappeared? (motion prediction??)
 
-### Object in the hand
+### Object in the hand detection
 
 After a hand is detected and a user interaction is taking place, the user might show an object in the camera. The question is: Is the user showing an object in the camera? 
 If we try to distinguish between an empty and a non-empty hand through image features, we will have to face the following obstacles:
@@ -123,5 +123,8 @@ If we try to distinguish between an empty and a non-empty hand through image fea
 Since the target objects to be detected are not very specific, neither is the background static, the above obstacles are really difficult to deal with. This is the reason that we opt for a simpler solution, that is, gesture recognition of a hand that is holding an object.
 - When a user shows an object in the camera, the landmarks of the hand (6, 7, 8, 10, 11, 12, 14, 15 and 16) have specific relative positions.
 - All of them have close y coordinates.
-- 
+
+When it is detected 1) intended user interaction and 2) hand gesture of holding an object, the algorithm has to take snapshots in order to later train the object detection network.
+
+
 
