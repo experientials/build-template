@@ -130,5 +130,5 @@ When it is detected 1) intended user interaction and 2) hand gesture of holding 
 
 #### Part 2
 
-The box around the detected object must be defined. The dimension of this box should be derived based on the closeness of the hand to the camera (see above) and hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20].
+The box around the detected object must be defined. The dimension of this box should be derived based on the closeness of the hand to the camera (see above), hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20] and handiness (left/right). Another idea for the future, is to make a better estimation using a background removal algorithm. 
 
