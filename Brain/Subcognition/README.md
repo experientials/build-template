@@ -119,8 +119,8 @@ Every time that a hand appears we want to say that hand appear, and every time t
 
 After a hand is detected and a user interaction is taking place, the user might show an object in the camera. The question is: Is the user showing an object in the camera? 
 If we try to distinguish between an empty and a non-empty hand through image features, we will have to face the following obstacles:
-- Reliable distinction between object and background (tested different implementation, the contour of the object and the hand is not sharpely detected)
-- Accurate segmentation of hand and grabbed object (not 100% accurate, see above section "Distinction between hand and object")
+- Reliable distinction between hand and object (not 100% accurate, see above section "Distinction between hand and object")
+- Reliable distinction between hand-object item and background (tested different implementation, the contour of the object and the background is not sharpely detected). Those simple background removal algorithms are mostly based on motion. If the hand is not doing any rapid movements, the background cannot be reliably removed. 
 
 Since the target objects to be detected are not very specific, neither is the background static, the above obstacles are really difficult to deal with. This is the reason that we opt for a simpler solution, that is, gesture recognition of a hand that is holding an object.
 - When a user shows an object in the camera, the landmarks of the hand (6, 7, 8, 10, 11, 12, 14, 15 and 16) have specific relative positions.
@@ -130,5 +130,14 @@ When it is detected 1) intended user interaction and 2) hand gesture of holding 
 
 #### Part 2
 
-The box around the detected object must be defined. The dimension of this box should be derived based on the closeness of the hand to the camera (see above), hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20] and handiness (left/right). Another idea for the future, is to make a better estimation using a background removal algorithm. 
+The box around the detected object must be defined. The dimension of this box should be derived in one of the following ways:
+- Based on the closeness of the hand to the camera (see above), hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20] and handiness (left/right) 
+- When an item is hold, the user will use their thumb (unless it is a very akward holding)
+- Another idea for the future, is to make a better estimation using a background removal algorithm
+
+#### Part 3
+
+After doing some research on **object detection** algorithms, it was concluded that they are not the ideal choise of our goal. Instead **image classification** may be prefered. Let's revise here the difference between those two:
+"... we will be using the term object recognition broadly to encompass both image classification (a task requiring an algorithm to determine what object classes are present in the image) as well as object detection (a task requiring an algorithm to localize all objects present in the image ..." ([Source: ImageNet Large Scale Visual Recognition Challenge](https://arxiv.org/abs/1409.0575)
+
 
