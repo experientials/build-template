@@ -118,11 +118,12 @@ Every time that a hand appears we want to say that hand appear, and every time t
 #### Part 1
 
 After a hand is detected and a user interaction is taking place, the user might show an object in the camera. The question is: Is the user showing an object in the camera? 
-If we try to distinguish between an empty and a non-empty hand through image features, we will have to face the following obstacles:
+If we try to decide whether the user holds and object by distinguishing between an empty and a non-empty hand through image features, we will have to face the following obstacles:
 - Reliable distinction between hand and object (not 100% accurate, see above section "Distinction between hand and object")
 - Reliable distinction between hand-object item and background (tested different implementation, the contour of the object and the background is not sharpely detected). Those simple background removal algorithms are mostly based on motion. If the hand is not doing any rapid movements, the background cannot be reliably removed. 
+- If the above are implemented, we could filter out the hand and the background. The pixels remaining are the ones of the object. But still, how do we know if those pixels depict an item?
 
-Since the target objects to be detected are not very specific, neither is the background static, the above obstacles are really difficult to deal with. This is the reason that we opt for a simpler solution, that is, gesture recognition of a hand that is holding an object.
+Since the target objects to be detected are not very specific, neither is the background static, the above obstacles are really difficult to deal with. This is the reason that we opt for a simpler solution, that is, detection by gesture recognition. When a hand grabs an objects, it has a specific gesture.
 - When a user shows an object in the camera, the landmarks of the hand (6, 7, 8, 10, 11, 12, 14, 15 and 16) have specific relative positions.
 - All of them have close y coordinates.
 
