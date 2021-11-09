@@ -147,12 +147,21 @@ Some of the most popular image classification algorithms:
 - [EfficientNetB0](https://paperswithcode.com/method/efficientnet#:~:text=EfficientNet%20is%20a%20convolutional%20neural,resolution%20using%20a%20compound%20coefficient.&text=EfficientNet%20uses%20a%20compound%20coefficient%20to%20uniformly%20scales%20network%20width,resolution%20in%20a%20principled%20way)
 - [Volo](https://arxiv.org/abs/2106.13112)
 
-All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. The results can be found below:
+In order to test the efficiency of the above algorithms, we recorded two videos with ~1minute duration. The items listed in those videos are:
+- ligher
+- gums box/bottle
+- mouse
+- remote control
+- sunglasses
+- mobile (defined as "hand-held computer" in imagenet)
+- Mug/Cup
+
+All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models are trained with [ImageNet](image-net.org) dataset. The results can be found below:
 
 
 | Method      | Fps (min - max) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
-| ResNet50 | ?? | Python - Keras | ?? | ??
-| MobileNetV2 | ?? | Python - Keras | ?? | ??
-| EfficientNetB0 | ?? | Python - Keras | ?? | ??
-| Volo | Python - | ?? | ??
+| ResNet50 | ?? | Python - Keras | ??
+| MobileNetV2 | ?? | Python - Keras | ?? 
+| EfficientNetB0 | ?? | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control  
+| Volo | ?? | ?? | ??
