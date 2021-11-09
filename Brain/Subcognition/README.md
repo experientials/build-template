@@ -161,7 +161,7 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 
 | Method      | Fps (average) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
-| ResNet50 | 5.83 | Python - Keras | Sparsely accurate detection of most objects. It doesn't have a stable good performance
+| ResNet50 | 5.83 | Python - Keras | Sparsely detection of most objects. It doesn't have a stable good performance
 | MobileNetV2 | ?? | Python - Keras | ?? 
-| EfficientNetB0 | ?? | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control  
+| EfficientNetB0 | 8.89 | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control  
 | Volo | ?? | ?? | ??
