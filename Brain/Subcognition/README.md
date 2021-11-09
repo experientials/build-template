@@ -144,6 +144,15 @@ After doing some research on **object detection** algorithms, it was concluded t
 Some of the most popular image classification algorithms:
 - [ResNet50](https://iq.opengenus.org/resnet50-architecture/)
 - [MobileNetV2](https://paperswithcode.com/method/mobilenetv2#:~:text=MobileNetV2%20is%20a%20convolutional%20neural,are%20between%20the%20bottleneck%20layers)
-- [Volo](https://arxiv.org/abs/2106.13112)
 - [EfficientNetB0](https://paperswithcode.com/method/efficientnet#:~:text=EfficientNet%20is%20a%20convolutional%20neural,resolution%20using%20a%20compound%20coefficient.&text=EfficientNet%20uses%20a%20compound%20coefficient%20to%20uniformly%20scales%20network%20width,resolution%20in%20a%20principled%20way)
+- [Volo](https://arxiv.org/abs/2106.13112)
 
+All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. The results can be found below:
+
+
+| Method      | Fps (min - max) | Implementation/Test | Notes
+| ----------- | ----------- | ----------- | ----------- | 
+| ResNet50 | ?? | Python - Keras | ?? | ??
+| MobileNetV2 | ?? | Python - Keras | ?? | ??
+| EfficientNetB0 | ?? | Python - Keras | ?? | ??
+| Volo | Python - | ?? | ??
