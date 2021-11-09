@@ -139,8 +139,11 @@ The box around the detected object must be defined. The dimension of this box sh
 #### Part 3
 
 After doing some research on **object detection** algorithms, it was concluded that they are not the ideal choise for our goal. Instead **image classification** may be prefered. Let's revise here the difference between those two:
-"... we will be using the term object recognition broadly to encompass both image classification (a task requiring an algorithm to determine what object classes are present in the image) as well as object detection (a task requiring an algorithm to localize all objects present in the image ..." ([Source: ImageNet Large Scale Visual Recognition Challenge](https://arxiv.org/abs/1409.0575)
+"... we will be using the term object recognition broadly to encompass both image classification (a task requiring an algorithm to determine what object classes are present in the image) as well as object detection (a task requiring an algorithm to localize all objects present in the image ..." ([Source: ImageNet Large Scale Visual Recognition Challenge](https://arxiv.org/abs/1409.0575))
 
-The image classification algorithms tests are:
-- (ResNet50)(https://iq.opengenus.org/resnet50-architecture/)
+Some of the most popular image classification algorithms:
+- [ResNet50](https://iq.opengenus.org/resnet50-architecture/)
+- [MobileNetV2](https://paperswithcode.com/method/mobilenetv2#:~:text=MobileNetV2%20is%20a%20convolutional%20neural,are%20between%20the%20bottleneck%20layers)
+- [Volo](https://arxiv.org/abs/2106.13112)
+- [EfficientNetB0](https://paperswithcode.com/method/efficientnet#:~:text=EfficientNet%20is%20a%20convolutional%20neural,resolution%20using%20a%20compound%20coefficient.&text=EfficientNet%20uses%20a%20compound%20coefficient%20to%20uniformly%20scales%20network%20width,resolution%20in%20a%20principled%20way)
 
