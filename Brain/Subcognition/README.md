@@ -159,9 +159,9 @@ In order to test the efficiency of the above algorithms, we recorded two videos 
 All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models are trained with [ImageNet](image-net.org) dataset. The results can be found below:
 
 
-| Method      | Fps (min - max) | Implementation/Test | Notes
+| Method      | Fps (average) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
-| ResNet50 | ?? | Python - Keras | ??
+| ResNet50 | 5.83 | Python - Keras | Sparsely accurate detection of most objects. It doesn't have a stable good performance
 | MobileNetV2 | ?? | Python - Keras | ?? 
 | EfficientNetB0 | ?? | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control  
 | Volo | ?? | ?? | ??
