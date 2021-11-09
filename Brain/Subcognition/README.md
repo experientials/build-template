@@ -148,7 +148,7 @@ Some of the most popular image classification algorithms:
 - [Volo](https://arxiv.org/abs/2106.13112)
 
 In order to test the efficiency of the above algorithms, we recorded two videos with ~1minute duration. The items listed in those videos are:
-- ligher
+- lighter
 - gums box/bottle
 - mouse
 - remote control
