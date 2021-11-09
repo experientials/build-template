@@ -138,7 +138,9 @@ The box around the detected object must be defined. The dimension of this box sh
 
 #### Part 3
 
-After doing some research on **object detection** algorithms, it was concluded that they are not the ideal choise of our goal. Instead **image classification** may be prefered. Let's revise here the difference between those two:
+After doing some research on **object detection** algorithms, it was concluded that they are not the ideal choise for our goal. Instead **image classification** may be prefered. Let's revise here the difference between those two:
 "... we will be using the term object recognition broadly to encompass both image classification (a task requiring an algorithm to determine what object classes are present in the image) as well as object detection (a task requiring an algorithm to localize all objects present in the image ..." ([Source: ImageNet Large Scale Visual Recognition Challenge](https://arxiv.org/abs/1409.0575)
 
+The image classification algorithms tests are:
+- (ResNet50)(https://iq.opengenus.org/resnet50-architecture/)
 
