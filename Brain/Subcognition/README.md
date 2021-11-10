@@ -154,7 +154,7 @@ In order to test the efficiency of the above algorithms, we recorded two videos 
 - remote control
 - sunglasses
 - mobile (defined as "hand-held computer" in imagenet)
-- Mug/Cup
+- Mug/Cup -> never detected due to object detection deficiency
 
 All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models are trained with [ImageNet](image-net.org) dataset. The results can be found below:
 
@@ -163,5 +163,5 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 | ----------- | ----------- | ----------- | ----------- | 
 | ResNet50 | 6.8 | Python - Keras | Accurate but sparse detection of most objects. It doesn't always recognise the item, but when it does, the result is accurate.
 | MobileNetV2 | 12.9 | Python - Keras | Cannot recognise accurately any item 
-| EfficientNetB0 | 11.31 | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control  
-| Volo | 2.83 | Python - Keras | Can detect almost all items. It mixes the mouse with the remote control. It fails to detect the remote control
+| EfficientNetB0 | 11.31 | Python - Keras | Can detect almost all items. It fails to detect the mouse (classifies it as remote control) and completely fails to detect the remote control  
+| Volo | 2.83 | Python - Keras | Can detect almost all items.  It fails to detect the lighter, the telephone and sometimes the mouse
