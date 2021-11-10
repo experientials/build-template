@@ -136,7 +136,8 @@ When it is detected 1) intended user interaction and 2) hand gesture of holding 
 The box around the detected object must be defined. The dimension of this box should be derived in one of the following ways:
 - Based on the closeness of the hand to the camera (see above), hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20] and handiness (left/right) 
 - When an item is hold, the user will use their thumb (unless it is a very akward holding)
-- Another idea for the future, is to make a better estimation using a background removal algorithm
+
+**Future extension:** Another idea for the future, is to make a better estimation using a background removal algorithm or by using stereo camera (depth estimation)
 
 #### Part 3
 
