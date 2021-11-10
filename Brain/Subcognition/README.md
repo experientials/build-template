@@ -129,6 +129,8 @@ Since the target objects to be detected are not very specific, neither is the ba
 
 When it is detected 1) intended user interaction and 2) hand gesture of holding an object, the algorithm has to take snapshots in order to later train the object detection network.
 
+**Future extension:** Train a simple network to classify the landmarks into "holding" "non-holding" categories.
+
 #### Part 2
 
 The box around the detected object must be defined. The dimension of this box should be derived in one of the following ways:
