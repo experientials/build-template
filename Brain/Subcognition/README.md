@@ -165,3 +165,5 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 | MobileNetV2 | 12.9 | Python - Keras | Cannot recognise accurately any item 
 | EfficientNetB0 | 11.31 | Python - Keras | Can detect almost all items. It fails to detect the mouse (classifies it as remote control) and completely fails to detect the remote control  
 | Volo | 2.83 | Python - Keras | Can detect almost all items.  It fails to detect the lighter, the telephone and sometimes the mouse
+
+Idea for improvement: Accumulate results over time
