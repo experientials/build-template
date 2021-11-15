@@ -178,6 +178,7 @@ Some of the most popular face detection algorithms:
 - [Haar Cascade](https://www.pyimagesearch.com/2021/04/12/opencv-haar-cascades/)
 - [DNN](https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/)
 - [Dlib](http://dlib.net/)
+- [mediapipe](https://google.github.io/mediapipe/solutions/face_detection.html)
 
 All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models use their default trained weights. The results can be found below:
 
