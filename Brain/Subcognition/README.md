@@ -98,24 +98,24 @@ We will test the following ones:
 | Contour Detection | TBD | Python - OpenCV library | The edge detection fails in many cases. it cannot accurately detect the boundaries of the object. That said, it blends object and hand many times resulting in a very wrong contour |
 | Hand colour | TBD | Python - OpenCV library | The segmentation based on hand colour gives the best results. Even if it's not 100% accurate, it removes only hand pixels. This depends on the colour size, but we don't expect objects with the exact same colour as the hand, otherwise a distinction wouldn't be possible. |
 
-## Gesture recognition
+# Gesture recognition
 
 Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
 
-## Surroundings cognition system
+# Surroundings cognition system
 
 The subcognition application should be able to produce some information based on the detected events. 
 
-### Detect number of hands appeared in the scene
+## Detect number of hands appeared in the scene
 
 Every time that a hand appears we want to say that hand appear, and every time that it goes away we want to say that hand disappeared. From the above analysis, it is obvious that mediapipe algorithm gives the best results. Mediapipe outputs the number of hands detected in a list (measurement is per frame). However, there are some deficiencies that must be tackled:
 - Mediapipe sometimes fail to detect the hands. That said, if the camera works at 30 FPS and the hands are not detected in the 5 out of the 30 FPS per second we can't deduct that hands disappeared for 0.17 sec! (**solution: low pass filter**)
 - Mediapipe sometimes falsely calculates two hands when only 1 hand is present in the scene. (**solution: filterout the hand centers which are very close together**)
 - Hand is occluded due to another item. How do we treat this use case? Do we say that hand disappeared? (motion prediction??)
 
-### Object (in the hand) detection
+## Object (in the hand) detection
 
-#### Part 1
+### Part 1
 
 After a hand is detected and a user interaction is taking place, the user might show an object in the camera. The question is: Is the user showing an object in the camera? 
 If we try to decide whether the user holds and object by distinguishing between an empty and a non-empty hand through image features, we will have to face the following obstacles:
@@ -131,7 +131,7 @@ When it is detected 1) intended user interaction and 2) hand gesture of holding 
 
 **Future extension:** Train a simple network to classify the landmarks into "holding" "non-holding" categories.
 
-#### Part 2
+### Part 2
 
 The box around the detected object must be defined. The dimension of this box should be derived in one of the following ways:
 - Based on the closeness of the hand to the camera (see above), hand landmarks [2-4, 6-8, 10-12, 14-16, 18-20] and handiness (left/right) 
@@ -139,7 +139,7 @@ The box around the detected object must be defined. The dimension of this box sh
 
 **Future extension:** Another idea for the future, is to make a better estimation using a background removal algorithm or by using stereo camera (depth estimation)
 
-#### Part 3
+### Part 3
 
 After doing some research on **object detection** algorithms, it was concluded that they are not the ideal choise for our goal. Instead **image classification** may be prefered. Let's revise here the difference between those two:
 "... we will be using the term object recognition broadly to encompass both image classification (a task requiring an algorithm to determine what object classes are present in the image) as well as object detection (a task requiring an algorithm to localize all objects present in the image ..." ([Source: ImageNet Large Scale Visual Recognition Challenge](https://arxiv.org/abs/1409.0575))
