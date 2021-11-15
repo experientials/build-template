@@ -171,7 +171,7 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 | EfficientNetB0 | 11.31 | Python - Keras | Can detect almost all items. It fails to detect the mouse (classifies it as remote control) and completely fails to detect the remote control  
 | Volo | 2.83 | Python - Keras | Can detect almost all items.  It fails to detect the lighter, the telephone and sometimes the mouse
 
-Idea for improvement: Accumulate results over time
+**Idea for improvement:** Accumulate results over time
 
 ## Face detection
 
@@ -179,3 +179,5 @@ Some of the most popular face detection algorithms:
 - [Haar Cascade](https://www.pyimagesearch.com/2021/04/12/opencv-haar-cascades/)
 - [DNN](https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/)
 - [Dlib](http://dlib.net/)
+
+All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models use their default trained weights. The results can be found below:
