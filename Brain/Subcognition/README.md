@@ -163,7 +163,6 @@ In order to test the efficiency of the above algorithms, we recorded two videos 
 
 All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models are trained with [ImageNet](image-net.org) dataset. The results can be found below:
 
-
 | Method      | Fps (average) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
 | ResNet50 | 6.8 | Python - Keras | Accurate but sparse detection of most objects. It doesn't always recognise the item, but when it does, the result is accurate.
@@ -181,3 +180,11 @@ Some of the most popular face detection algorithms:
 - [Dlib](http://dlib.net/)
 
 All the 4 methods are tested in a general computer machine featuring Intel Core i5-8365U CPU @ 1.60 GHz, 1896 MHz, 4 Core(s). For the testing we used a general webcam with 640x480 resolution. All models use their default trained weights. The results can be found below:
+
+| Method      | Fps (average) | Implementation/Test | Notes
+| ----------- | ----------- | ----------- | ----------- | 
+| Haar Cascade | 31.19 | Python - OpenCV | Accurate face detection
+| DNN | 37.52 | Python - OpenCV | Accurate face detection
+| Dlib | 0.18 | Python - Dlib | Accurate face detection
+| mediapipe |  | Python - Mediapipe | 
+
