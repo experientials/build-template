@@ -13,15 +13,21 @@ It should be written in Rust if possible, C++ as a secondary choice. It can rely
 
 Supported camera devices to be considered.
 
-# Hand detection
+# Surroundings cognition system
 
-## Research on hand detection algorithms
+The subcognition application should be able to produce some information based on the detected events. 
+
+## Hand detection
+
+In order to detect user interaction, a hand detection algorithm must be implemented.
+
+### Research on hand detection algorithms
 
 There are many research papers that published hand detection techniques over the years. Two of those give a nice overview of the most popular techniques:
 - [Hand Gesture Recognition Based on Computer Vision: A Review of Techniques](https://www.mdpi.com/2313-433X/6/8/73)
 - [Vision-Based Hand Gesture Recognition System for a Dynamic and Complicated Environment](https://ieeexplore.ieee.org/document/7379635)
 
-## Testing
+### Testing
 
 The most popular methods that we will test are:
 - [yolo v4 tiny](https://arxiv.org/abs/2004.10934)
@@ -36,13 +42,13 @@ All the 3 methods are tested in a general computer machine featuring Intel Core 
 | MediaPipe Hands: On-device Real-time Hand Tracking | 11 - 86 | Python - Mediapipe library | Good performance on a general CPU. Very accurate detection. The implementation is based on hand tracking (besides palm and finger detection). Google claims their implementation achieves 95% palm detection accuracy |
 | fast hand detection and gesture recognition | 35 - 1100 | No implementation found. Manually developed in python | In general it can detect skin but with outliers (even after background removal algorithms). This is because the background subtraction doesn't work well when the hand is very close to the camera. Also, hasn't found a way yet to distinguish between face and hands.
 
-### Test with only 4 FPS
+#### Test with only 4 FPS
 
 The above 3 methods were tested with 4 FPS video. The main observation is that all algorithms exhibit almost the same behaviour and results. Regarding mediapipe, it may lose tracking more often if the human movement is very rapid, which is not our usual use case. If mediapipe loses tracking it will re-initialize hand detection without taking advantage of its tracking algorithm.
 
 Observation: Perhaps we can even go as low as 2 FPS. Since this doesn't affect algorithm accuracy and an intended interaction shouldn't take less than 1 sec.
 
-### Mediapipe - Tradeoff between performance and FPS
+#### Mediapipe - Tradeoff between performance and FPS
 
 The webcamera used in our experiments has max. resolution of 30 FPS. In the analysis above, we saw that mediapipe can run with lower FPS without an impact in the accuracy. The question here is, what is impact of a lower resolution (= lower FPS) in mediapipe performance? Also, how is it affected by distance? 
 
@@ -65,13 +71,13 @@ The webcamera used in our experiments has max. resolution of 30 FPS. In the anal
 - In a distance smaller than 2 meters, when the camera frame rate is higher, the average execution time is smaller. That can be explained because mediapipe makes more use of the tracking algorithm.
 - In a distance bigger than 2 meters, the FPS do not have a big impact on performance. This is probably explained since the hit rate of mediapipe decreases a lot. 
 
-### Test with gloves
+#### Test with gloves
 
 As expected, the accuracy of all algorithms is seriously decreased with globes (drops more than 95%). Another algorithm should be researched in case glove detection is desired.
 
-## Boundary box 
+### Boundary box 
 
-### Calculation of box size 
+#### Calculation of box size 
 
 Both the mediapipe and the yolo algorithms result in a boundary box with the detected hand in the center. However, the dimensions do not include the item but only the hands. Assuming that the desired object to be recognised has dimensions similar to the hand (e.g., it's probably a small toy), and in order for the boundary box to include the item, it has to be extended according to the hand size. The formula that is used in our tests:
 
@@ -98,13 +104,9 @@ We will test the following ones:
 | Contour Detection | TBD | Python - OpenCV library | The edge detection fails in many cases. it cannot accurately detect the boundaries of the object. That said, it blends object and hand many times resulting in a very wrong contour |
 | Hand colour | TBD | Python - OpenCV library | The segmentation based on hand colour gives the best results. Even if it's not 100% accurate, it removes only hand pixels. This depends on the colour size, but we don't expect objects with the exact same colour as the hand, otherwise a distinction wouldn't be possible. |
 
-# Gesture recognition
+## Gesture recognition
 
 Mediapipe produces the landmarks of the fingers. By analyzing the landmarks (relative) positions it's easy to recognise many gestures. See [concept](https://gist.github.com/TheJLifeX/74958cc59db477a91837244ff598ef4a)
-
-# Surroundings cognition system
-
-The subcognition application should be able to produce some information based on the detected events. 
 
 ## Detect number of hands appeared in the scene
 
@@ -170,3 +172,10 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 | Volo | 2.83 | Python - Keras | Can detect almost all items.  It fails to detect the lighter, the telephone and sometimes the mouse
 
 Idea for improvement: Accumulate results over time
+
+## Face detection
+
+Some of the most popular face detection algorithms:
+- [Haar Cascade](https://www.pyimagesearch.com/2021/04/12/opencv-haar-cascades/)
+- [DNN](https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/)
+- [Dlib](http://dlib.net/)
