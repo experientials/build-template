@@ -186,5 +186,5 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 | Haar Cascade | 31.19 | Python - OpenCV | Accurate face detection
 | DNN | 37.52 | Python - OpenCV | Accurate face detection
 | Dlib | 0.18 | Python - Dlib | Accurate face detection
-| mediapipe |  | Python - Mediapipe | 
+| mediapipe | 89.03 | Python - Mediapipe | Fastest algorithm. 
 
