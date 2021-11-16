@@ -184,8 +184,9 @@ All the 4 methods are tested in a general computer machine featuring Intel Core 
 
 | Method      | Fps (average) | Implementation/Test | Notes
 | ----------- | ----------- | ----------- | ----------- | 
-| Haar Cascade | 31.19 | Python - OpenCV | Accurate face detection
-| DNN | 37.52 | Python - OpenCV | Accurate face detection
-| Dlib | 0.18 | Python - Dlib | Accurate face detection
-| mediapipe | 89.03 | Python - Mediapipe | Fastest algorithm. 
+| Haar Cascade | 27.75 | Python - OpenCV | Fast and accurate detection up to 5 meters. It loses detection when I touch my face. Also, loses performance when a weird face angle is encountered.
+| DNN | 22.51 | Python - OpenCV | Very Accurate face detection up to 3 meters.
+| Dlib | 0.18 | Python - Dlib | Very very slow algorithm, rejected due to performance.
+| mediapipe | 22.88 (up to 5 meters), 89.03 (up to 2 meters) | Python - Mediapipe | Fastest algorithm in short distances (up to 2 meters), good performance on longer ones (up to 5 meters). Very accurate detection up to 5 meters. It doesn't lose detection when I touch my face.
 
+**Important:** None of the above algorithms works with the back of the head. The more robust one is the mediapipe since it depends on face landmarks not on training.
