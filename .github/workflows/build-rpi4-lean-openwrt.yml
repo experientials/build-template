@@ -302,7 +302,7 @@ jobs:
           echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
 
       - name: Delete Artifacts
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v2
         with:
           name: |
             bin-archive
